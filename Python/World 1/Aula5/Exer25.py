@@ -1,0 +1,5 @@
+#nome= str(input('Qual é o seu nome? ')).strip()
+#print('A "Silva" no nome?')
+#print(nome[:5].lower().split()=='silva')
+nome = str(input('Qual é o seu nome completo? ')).strip()
+print('Seu Nome tem Silva? {}'.format('silva' in nome.lower().split()))
