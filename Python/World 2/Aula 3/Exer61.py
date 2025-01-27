@@ -2,7 +2,10 @@ print("Digite os números para calcular a PA")
 p1 = int(input("primeiro termo: "))
 r = int(input("razão: "))
 
-pa = p1 + (9 * r)
+cont = 1
+term = p1
 
-for c in range(p1, pa, r):
-    print(f'{c}', end= "->")
+while cont <= 10:
+    term += r
+    cont += 1
+    print(f'{term}', end= " -> ")
