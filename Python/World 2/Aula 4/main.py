@@ -1,16 +1,18 @@
-n = cont = 0
-while True:
-    n = int(input("Digite um número: "))
-    if n == 999:
-        break
-    cont += n
-print(f"A soma vale {cont}")
+numero = int(input("Digite um número: "))
 
-#cont = 1
-#while cont <= 10:
-#    print(cont, "->", end="")
-#    cont += 1
-#print("ACABOU"
+posicao = ["Unidade", "Dezena", "Centena", "Milhar", "Dezena de Milhar", "Centena de Milhar", "Milhão"]
+indice = 0
+digitos = 0
+temp = numero
 
-#Apenas a estrutura "While True" faz com que fique
-# infinitamente contando os numeros
+while temp > 0:
+    temp //= 10
+    digitos += 1
+
+print(f"O número {numero} possui {digitos} dígitos.")
+
+while numero > 0 and indice < len(posicao):
+    digito = numero % 10
+    print(f"{posicao[indice]}: {digito}")
+    numero //= 10
+    indice += 1
