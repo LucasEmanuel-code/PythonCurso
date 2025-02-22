@@ -5,10 +5,7 @@ tupla = ('Marcenaria', 'Abacaxi', 'Suco',
 vogais = 'aeiouAEIOU'
 
 for palavra in tupla:
-
-    vogais_palavra = [letra for letra in palavra if letra in vogais]
-
-    print(f'Vogais em {palavra.upper()}:', end=" ")
-    for vogal in vogais_palavra:
-        print(vogal, end=" ")
-    print()
+    print(f'\nVogais em {palavra.upper()}: ', end='')
+    for vogal in palavra:
+        if vogal.lower() in vogais:
+            print(vogal, end=' ')
