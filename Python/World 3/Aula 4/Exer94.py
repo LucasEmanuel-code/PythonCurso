@@ -12,11 +12,14 @@ while True:
 
     pessoas.append(dados)
 
-    continuar = input("Deseja continuar? [S/N]: ").strip().lower()
-    print()
-
-    if continuar == "n":
+    while True:
+        resp = str(input('Quer continuar? [S/N] ')).upper()[0]
+        if resp in 'SN':
+            break
+        print('Erro! Responda apenas S ou N.')
+    if resp == 'N':
         break
+    print()
 
 print(f'Quantidade de pessoas cadastradas: {len(pessoas)}')
 if len(pessoas) > 0:
@@ -24,21 +27,20 @@ if len(pessoas) > 0:
         media_idades = soma_idades / len(pessoas)
         print(f'A média das idades é {media_idades:.2f}')
 
-        mulher = [dados for dados in pessoas if dados['sexo'] == 'f']
-        if mulher:
-            print("Nomes das mulheres cadastradas:")
-            for mulheres in mulher:
-                print(f"{mulheres['nome']}")
-
-        acima = [dados for dados in pessoas if dados['idade'] > media_idades]
-
-        print('Pessoas acima da média: ')
+        print('As mulheres cadastradas foram: ', end='')
+        for p in pessoas:
+            if p['sexo'] in 'Ff':
+                print(f'{p["nome"]}', end=' ')
+        print()
         print()
 
-        for pessoas in acima:
-            print(f'Nome: {pessoas['nome']} \n'
-                  f'Idade: {pessoas['idade']} \n'
-                  f'Sexo: {pessoas['sexo']}'.lower())
-            print()
+        print('Lista das pessoas que estão acima da média: ')
+        for p in pessoas:
+            if p['idade'] >= media_idades:
+                print('   ', end='')
+                for k, v in p.items():
+                    print(f'{k} = {v}; ', end='')
+                print()
+        print('<< Encerrado >>')
 else:
     print('Nenhuma pessoa cadastrada')

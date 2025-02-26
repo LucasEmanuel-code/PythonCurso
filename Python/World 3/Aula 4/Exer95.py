@@ -37,7 +37,7 @@ while True:
     if opc == 999:
         print('Finalizando...')
         sleep(1)
-        print('Programa finalizado com sucesso!')
+        print('Finalizado com Sucesso!')
         break
 
     if 1 <= opc <= len(dadosjogadores):
