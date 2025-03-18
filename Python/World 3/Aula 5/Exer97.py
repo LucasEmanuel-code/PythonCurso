@@ -3,10 +3,9 @@ uso = str(input(''))
 uso2 = str(input(''))
 uso3 = str(input(''))
 
-tamanho = len(uso)
-
 def escreva(escrever):
 
+    tamanho = len(escrever)
     print('-'*tamanho)
     print(escrever)
     print('-'*tamanho)
